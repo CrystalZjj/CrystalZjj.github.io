@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="星辰">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://CrystalZjj.github.io/2024/08/17/创建github个人博客/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="开发环境MacOS 一. 必备工具包（4个） git安装document：https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;en&#x2F;v2&#x2F;Getting-Started-Installing-Git   node安装命令 1brew install node 检查是否安装成功 1node -v npm不需要显式安装，其是node.js的包管理工具（安装node时已经安装）  hexo安装命令： 1s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建github个人博客">
+<meta property="og:url" content="http://crystalzjj.github.io/2024/08/17/%E5%88%9B%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="星辰之站">
+<meta property="og:description" content="开发环境MacOS 一. 必备工具包（4个） git安装document：https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;en&#x2F;v2&#x2F;Getting-Started-Installing-Git   node安装命令 1brew install node 检查是否安装成功 1node -v npm不需要显式安装，其是node.js的包管理工具（安装node时已经安装）  hexo安装命令： 1s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-17T08:34:48.000Z">
+<meta property="article:modified_time" content="2024-08-17T17:59:13.713Z">
+<meta property="article:author" content="星辰">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="npm">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-logo.webp" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-logo.webp">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-logo.webp">
+    <!--- Page Info-->
+    
+    <title>
+        
+            创建github个人博客 -
+        
+        星辰之站
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"crystalzjj.github.io","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":false,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"星辰大海，春暖花开！","subtitle":{"text":["怕什么真理无穷，进一寸有一寸的欢喜！"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Categories":{"path":"/categories/","icon":null},"Tags":{"path":"/tags/","icon":null}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                星辰之站
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories/"
+                                        >
+                                    
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories/"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">创建github个人博客</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-logo.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">星辰</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-08-17 16:34:48</span>
+        <span class="mobile">2024-08-17 16:34:48</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-08-18 01:59:13</span>
+            <span class="mobile">2024-08-18 01:59:13</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Hexo/">Hexo</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/github/">github</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/npm/">npm</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>MacOS</p>
+<h3 id="一-必备工具包（4个）"><a href="#一-必备工具包（4个）" class="headerlink" title="一. 必备工具包（4个）"></a>一. 必备工具包（4个）</h3><ul>
+<li><p>git<br>安装document：<a class="link"   target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" >https://git-scm.com/book/en/v2/Getting-Started-Installing-Git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p>node<br>安装命令</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></div>
+<p>检查是否安装成功</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></div></li>
+<li><p>npm<br>不需要显式安装，其是node.js的包管理工具（安装node时已经安装）</p>
+</li>
+<li><p>hexo<br>安装命令：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm insall -g hexo-cli</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h3 id="二-初始化hexo工作目录"><a href="#二-初始化hexo工作目录" class="headerlink" title="二. 初始化hexo工作目录"></a>二. 初始化hexo工作目录</h3><p>hexo 安装完后<br>（1）初始化hexo项目</p>
+<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/setup" >https://hexo.io/docs/setup <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure></div>
+<p>会自动在执行hexo init命令所在路径下，创建一个名为&lt;folder&gt;的hexo项目；</p>
+<p>如果遇到错误：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[BUG] <span class="string">&quot;sill idealTree buildDeps&quot;</span> takes a lot of time a project with workspaces <span class="comment">#3257</span></span><br></pre></td></tr></table></figure></div>
+<p>可以尝试执行（参考：<a class="link"   target="_blank" rel="noopener" href="https://github.com/npm/cli/issues/3257%EF%BC%89" >https://github.com/npm/cli/issues/3257） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm set strict-ssl false</span><br></pre></td></tr></table></figure></div>
+
+<p>（2）安装渲染插件（先下载第四步中的themes主题，再执行这一步！）</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
+<p>&lt;folder&gt;目录内会生成如下文件和文件夹；【如果不去主动开发themes，这些含义大致了解即可，使用者只需关注在哪里做改动】</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>scaffolds【文件夹】</td>
+<td>当hexo创建新md文件时，会基于scaffolds内的文件来创建新md文件</td>
+</tr>
+<tr>
+<td>source【文件夹】</td>
+<td>放置网站内容的地方，hexo会忽略隐藏文件以及名称以_（下划线）为前缀的文件或文件夹，_posts文件夹除外。会渲染markdown文件和html文件并且将它们放到public文件夹，其他的文件会直接复制</td>
+</tr>
+<tr>
+<td>themes【文件夹】</td>
+<td>主题文件，hexo会根据theme文件产生一个静态网页</td>
+</tr>
+<tr>
+<td>packages.json</td>
+<td>依赖的渲染器</td>
+</tr>
+<tr>
+<td>_config.json</td>
+<td>修改网站的一些配置文件</td>
+</tr>
+</tbody></table>
+<h3 id="三-关于hexo工程的注意点【根据实际需要看即可，更详细的请参考官方文档】"><a href="#三-关于hexo工程的注意点【根据实际需要看即可，更详细的请参考官方文档】" class="headerlink" title="三. 关于hexo工程的注意点【根据实际需要看即可，更详细的请参考官方文档】"></a>三. 关于hexo工程的注意点【根据实际需要看即可，更详细的请参考官方文档】</h3><h4 id="3-1-layout-布局"><a href="#3-1-layout-布局" class="headerlink" title="3.1 layout 布局"></a>3.1 layout 布局</h4><ul>
+<li>hexo中默认有三种布局：帖子（post）、页面（page）和草稿（draft）</li>
+<li>不同布局有不同的路径：post（source&#x2F;_posts），page（source），draft（source&#x2F;_draft）</li>
+<li>如果不想使用themes中的布局，令_config.json文件中的 layout : false 即可</li>
+</ul>
+<h4 id="3-2-filename-文件名"><a href="#3-2-filename-文件名" class="headerlink" title="3.2 filename 文件名"></a>3.2 filename 文件名</h4><ul>
+<li>默认hexo使用post title作为文件名，可以改变 _config.json 文件中的 new_post_name 来改变默认文件名【具体怎么用还没试过】</li>
+</ul>
+<h4 id="3-3-drafts-草稿"><a href="#3-3-drafts-草稿" class="headerlink" title="3.3 drafts 草稿"></a>3.3 drafts 草稿</h4><ul>
+<li>基于 draft 层初始化的posts 被保存在 source&#x2F;_drafts 文件夹；</li>
+<li>可以使用 publish 来将 草稿 drafts 移动到 source&#x2F;_drafts 文件夹；</li>
+<li>drafts 默认不显示，当执行hexo命令时可以添加 -option 选项 或者 配置_config.json文件中的 render_drafts参数 来显示</li>
+</ul>
+<h4 id="3-4-scaffolds"><a href="#3-4-scaffolds" class="headerlink" title="3.4 scaffolds"></a>3.4 scaffolds</h4><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new photo <span class="string">&quot;My gallary&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>当运行此命令，hexo会试图去寻找在 scaffolds 文件夹中的 photo.md 文件，并且基于它创建 My gallary.md文件</p>
+<h4 id="3-5-支持的格式"><a href="#3-5-支持的格式" class="headerlink" title="3.5 支持的格式"></a>3.5 支持的格式</h4><ul>
+<li>hexo默认安装 markdown 和 ejs插件，即（hexo-rendered-marked 和 hexo-rendered-ejs）</li>
+</ul>
+<h4 id="3-6-Asset-folders"><a href="#3-6-Asset-folders" class="headerlink" title="3.6 Asset folders"></a>3.6 Asset folders</h4><p>更多使用细节请去参考：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/asset-folders" >https://hexo.io/docs/asset-folders <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>Asset文件夹在source文件夹中是非post文件，例如有images、css或者javascripts；如果在hexo工程中要显示一些图片， 最简单的方法就是将这些图片放置到 source&#x2F;images 文件夹下，然后可以使用下述命令引用图片<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/images/image.jpg)</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h5 id="3-6-1-post-asset-folders"><a href="#3-6-1-post-asset-folders" class="headerlink" title="3.6.1 post asset folders"></a>3.6.1 post asset folders</h5><p>当有资产文件夹，想上传到github，只需一配置_config.json文件中的参数 post_asset_file 为true即可</p>
+<h4 id="3-7-Tag-Plugins-For-Relative-Path-Referencing（用于相对路径引用的标签插件）"><a href="#3-7-Tag-Plugins-For-Relative-Path-Referencing（用于相对路径引用的标签插件）" class="headerlink" title="3.7 Tag Plugins For Relative Path Referencing（用于相对路径引用的标签插件）"></a>3.7 Tag Plugins For Relative Path Referencing（用于相对路径引用的标签插件）</h4><p>插件也是显示图像的另一种方法。</p>
+<h4 id="3-8-使用asset-image插件在markdown嵌入一张图片【还未试验过】"><a href="#3-8-使用asset-image插件在markdown嵌入一张图片【还未试验过】" class="headerlink" title="3.8 使用asset_image插件在markdown嵌入一张图片【还未试验过】"></a>3.8 使用asset_image插件在markdown嵌入一张图片【还未试验过】</h4><p>需要修改_config.json中的参数：</p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="3-9-创建hexo服务器的注意点"><a href="#3-9-创建hexo服务器的注意点" class="headerlink" title="3.9 创建hexo服务器的注意点"></a>3.9 创建hexo服务器的注意点</h4><h5 id="3-9-1-创建静态服务器"><a href="#3-9-1-创建静态服务器" class="headerlink" title="3.9.1 创建静态服务器"></a>3.9.1 创建静态服务器</h5><p>（只有public文件内的内容能够被加载和看见，在创建服务器之前，必须使用hexo generate才能看见修改的内容）：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -s</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="3-9-2-指定IP"><a href="#3-9-2-指定IP" class="headerlink" title="3.9.2 指定IP"></a>3.9.2 指定IP</h5><p>默认为0.0.0.0</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -i 192.168.1.1</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="3-10-generate文件的注意点"><a href="#3-10-generate文件的注意点" class="headerlink" title="3.10 generate文件的注意点"></a>3.10 generate文件的注意点</h4><p>参考：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating" >https://hexo.io/docs/generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="四-引入外部themes主题"><a href="#四-引入外部themes主题" class="headerlink" title="四. 引入外部themes主题"></a>四. 引入外部themes主题</h3><p>hexo themes主题网址：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >https://hexo.io/themes/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> ， 可从中任意选择一个根据其说明文档来配置，这里以redefine（<a class="link"   target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine" >https://github.com/EvanNotFound/hexo-theme-redefine <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> ） 为例说明</p>
+<p>以下步骤皆参考自：<a class="link"   target="_blank" rel="noopener" href="https://redefine-docs.ohevan.com/getting-started" >https://redefine-docs.ohevan.com/getting-started <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>（1）在hexo项目根目录，下载themes主题代码</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/EvanNotFound/hexo-theme-redefine.git themes/redefine</span><br></pre></td></tr></table></figure></div>
+
+
+<p>（2）修改hexo工程下的_config.json配置文件</p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">redefine</span></span><br></pre></td></tr></table></figure></div>
+
+<p>（3）在_config.json同级目录，新建_config.redefine.yml文件<br>作用：本文件会自动覆盖_config.json的已有配置，目的是为了在升级时，丢失掉原本配置<br>将：<a class="link"   target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine/blob/main/_config.yml" >https://github.com/EvanNotFound/hexo-theme-redefine/blob/main/_config.yml <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 此网站的内容复制到 _config.redfine.yml 中去</p>
+<p>此时</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+<p>便可以在 <a class="link"   target="_blank" rel="noopener" href="http://localhost:4000/" >http://localhost:4000/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 看到redefine主题的网页</p>
+<h3 id="五-将个人博客部署到github（废弃掉）"><a href="#五-将个人博客部署到github（废弃掉）" class="headerlink" title="五. 将个人博客部署到github（废弃掉）"></a>五. 将个人博客部署到github（废弃掉）</h3><p>参考：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages" >https://hexo.io/docs/github-pages <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>方法一：</p>
+<p>（1）创建一个名为 username.github.io 仓库</p>
+<p>（2）将hexo仓库内的内容推送到仓库上</p>
+<p>（3）在hexo项目中创建 .github&#x2F;workflows&#x2F;pages.yml 文件，文件内容位于：（<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages#One-command-deployment" >https://hexo.io/docs/github-pages#One-command-deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> ），根据自己的node版本替换文件中的版本 </p>
+<p>（4）再次提交</p>
+<p>接着问题就出来了！！！！说明（1-4）步你的操作不对，放弃！！！<br>尝试方法二：<br>（1）安装 hexo-deployer-git</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
+<p>（2）GitHub 创建一个名为 username.github.io 仓库<br>（3）新增hexo项目中_config.yml文件内容</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:CrystalZjj/GrystalZjj.github.io.git</span></span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
+<p>（4）执行</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
+
+<p>出现如下问题：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARN  Check latest version failed: Error: connect ETIMEDOUT 52.76.85.65:443</span><br></pre></td></tr></table></figure></div>
+<p>网络问题，本地开了vpn，关掉即可解决！</p>
+<p>（5）在网页输入：username.github.io 检查<br>出现404的错误！</p>
+<p>方法二和方法一部署到github上均失败了！！！</p>
+<h3 id="五-将个人博客部署github上"><a href="#五-将个人博客部署github上" class="headerlink" title="五. 将个人博客部署github上"></a>五. 将个人博客部署github上</h3><p>（1）github创建个人仓库，任意名即可<br>（2）修改hexo项目的_config.yml文件，增加</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;project&gt;</span></span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
+<p>（3）修改hexo项目的_config.yml文件</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://username.github.io</span></span><br></pre></td></tr></table></figure></div>
+<p>（4）修改hexo项目的_config.redefine.yml文件</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">info:</span></span><br><span class="line">  <span class="comment"># Site title</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Theme</span> <span class="string">Redefine</span></span><br><span class="line">  <span class="comment"># Author name</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">The</span> <span class="string">Redefine</span> <span class="string">Team</span></span><br><span class="line">  <span class="comment"># Site URL</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">http://CrystalZjj.github.io</span></span><br></pre></td></tr></table></figure></div>
+<p>（5）安装</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
+<p>（6）执行</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
+<p>（7）网页打开 usernam.github.io</p>
+<p>至此，个人博客已经全部部署完毕，接下来的配置就需要自行去阅读官方文档了！！！</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 创建github个人博客</li>
+        <li><strong>作者:</strong> 星辰</li>
+        <li><strong>创建于
+                :</strong> 2024-08-17 16:34:48</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-08-18 01:59:13
+            </li>
+        
+        <li>
+            <strong>链接:</strong> http://crystalzjj.github.io/2024/08/17/创建github个人博客/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/github/">#github</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/npm/">#npm</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/08/18/SFINEA/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">SFINAE</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">目录</div>
+        <div class="page-title">创建github个人博客</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-text">开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7%E5%8C%85%EF%BC%884%E4%B8%AA%EF%BC%89"><span class="nav-text">一. 必备工具包（4个）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">二. 初始化hexo工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E5%85%B3%E4%BA%8Ehexo%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E3%80%90%E6%A0%B9%E6%8D%AE%E5%AE%9E%E9%99%85%E9%9C%80%E8%A6%81%E7%9C%8B%E5%8D%B3%E5%8F%AF%EF%BC%8C%E6%9B%B4%E8%AF%A6%E7%BB%86%E7%9A%84%E8%AF%B7%E5%8F%82%E8%80%83%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E3%80%91"><span class="nav-text">三. 关于hexo工程的注意点【根据实际需要看即可，更详细的请参考官方文档】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B-%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8themes%E4%B8%BB%E9%A2%98"><span class="nav-text">四. 引入外部themes主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94-%E5%B0%86%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%EF%BC%88%E5%BA%9F%E5%BC%83%E6%8E%89%EF%BC%89"><span class="nav-text">五. 将个人博客部署到github（废弃掉）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94-%E5%B0%86%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2github%E4%B8%8A"><span class="nav-text">五. 将个人博客部署github上</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">星辰</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 11 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.1</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
