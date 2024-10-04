@@ -13,24 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://CrystalZjj.github.io/2024/09/28/抽象工厂模式/"/>
+    <link rel="canonical" href="http://CrystalZjj.github.io/2024/10/04/c-细节综合/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="引言除了避免创建对象过程的紧耦合，还为了解决一系列相互依赖对象的创建工作。 uml类图 实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768&#x2F;*抽象工厂模式*&#x2F;&#x2F;&#x2F; 连接组件的抽象基类class">
+        <meta name="description" content="std::is_base_of1std::is_base_of&lt;Base, Derived&gt;::value 验证Derived是否是Base的派生类 const_cast1const_cast&lt;Base*&gt;(static_cast&lt;Base const *&gt;(derived))  先将derived强转为指向Base的const指针 再转为指向Base的指针，去">
 <meta property="og:type" content="article">
-<meta property="og:title" content="抽象工厂模式">
-<meta property="og:url" content="http://crystalzjj.github.io/2024/09/28/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="c++细节综合">
+<meta property="og:url" content="http://crystalzjj.github.io/2024/10/04/c-%E7%BB%86%E8%8A%82%E7%BB%BC%E5%90%88/index.html">
 <meta property="og:site_name" content="星辰之站">
-<meta property="og:description" content="引言除了避免创建对象过程的紧耦合，还为了解决一系列相互依赖对象的创建工作。 uml类图 实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768&#x2F;*抽象工厂模式*&#x2F;&#x2F;&#x2F; 连接组件的抽象基类class">
+<meta property="og:description" content="std::is_base_of1std::is_base_of&lt;Base, Derived&gt;::value 验证Derived是否是Base的派生类 const_cast1const_cast&lt;Base*&gt;(static_cast&lt;Base const *&gt;(derived))  先将derived强转为指向Base的const指针 再转为指向Base的指针，去">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crystalzjj.github.io/images/abstractFactory.png">
-<meta property="article:published_time" content="2024-09-28T00:22:22.000Z">
-<meta property="article:modified_time" content="2024-09-28T00:46:46.885Z">
+<meta property="article:published_time" content="2024-10-04T02:32:07.000Z">
+<meta property="article:modified_time" content="2024-10-04T06:00:22.149Z">
 <meta property="article:author" content="星辰">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crystalzjj.github.io/images/abstractFactory.png">
     
     
     <!--- Icon Part-->
@@ -42,7 +40,7 @@
     
     <title>
         
-            抽象工厂模式 -
+            c++细节综合 -
         
         星辰之站
     </title>
@@ -314,7 +312,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">抽象工厂模式</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">c++细节综合</h1>
                 </div>
             
             </div>
@@ -335,15 +333,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-09-28 08:22:22</span>
-        <span class="mobile">2024-09-28 08:22:22</span>
+        <span class="desktop">2024-10-04 10:32:07</span>
+        <span class="mobile">2024-10-04 10:32:07</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-28 08:46:46</span>
-            <span class="mobile">2024-09-28 08:46:46</span>
+            <span class="desktop">2024-10-04 14:22</span>
+            <span class="mobile">2024-10-04 14:22</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -357,7 +355,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>&nbsp;
+                            <a href="/categories/C/">C++</a>&nbsp;
                         </li>
                     
                     
@@ -382,32 +380,69 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>除了避免创建对象过程的紧耦合，还为了解决一系列相互依赖对象的创建工作。</p>
-<h1 id="uml类图"><a href="#uml类图" class="headerlink" title="uml类图"></a>uml类图</h1><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/abstractFactory.png"
-                     
-                ></p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*抽象工厂模式*/</span></span><br><span class="line"><span class="comment">// 连接组件的抽象基类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IDBConnection</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">IDBConnection</span>() = <span class="keyword">default</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 命令组件的抽象基类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IDBCommand</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">IDBCommand</span>() = <span class="keyword">default</span>;    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数据读取组件的抽象基类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IDBDataReader</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">IDBDataReader</span>() = <span class="keyword">default</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建组件的抽象工厂</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IDBFactory</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">IDBFactory</span>() = <span class="keyword">default</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBConnection* <span class="title">CreateConnection</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBCommand* <span class="title">CreateCommand</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBDataReader* <span class="title">CreateDataReader</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体Sql连接组件</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SqlConnection</span> : <span class="keyword">public</span> IDBConnection &#123;</span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体命令组件</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SqlCommand</span> : <span class="keyword">public</span> IDBCommand &#123;</span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体数据读取组件</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SqlDataReader</span> : <span class="keyword">public</span> IDBDataReader &#123;</span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体创建组件的工厂</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SqlFactory</span> : <span class="keyword">public</span> IDBFactory &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBConnection* <span class="title">CreateConnection</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SqlConnection;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBCommand* <span class="title">CreateCommand</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SqlCommand;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> IDBDataReader* <span class="title">CreateDataReader</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SqlDataReader;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只依赖抽象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MainForm2</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    SqlFactory* factory;</span><br><span class="line">    <span class="built_in">MainForm2</span>(SqlFactory* factory) : <span class="built_in">factory</span>(factory) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Click</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        IDBConnection* connection = factory-&gt;<span class="built_in">CreateConnection</span>();</span><br><span class="line">        IDBCommand* command = factory-&gt;<span class="built_in">CreateCommand</span>();</span><br><span class="line">        IDBDataReader* reader = factory-&gt;<span class="built_in">CreateDataReader</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+            <h2 id="std-is-base-of"><a href="#std-is-base-of" class="headerlink" title="std::is_base_of"></a>std::is_base_of</h2><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::is_base_of&lt;Base, Derived&gt;::value</span><br></pre></td></tr></table></figure></div>
+<p>验证Derived是否是Base的派生类</p>
+<h2 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h2><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">const_cast</span>&lt;Base*&gt;(<span class="built_in">static_cast</span>&lt;Base <span class="type">const</span> *&gt;(derived))</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>先将derived强转为指向Base的const指针</li>
+<li>再转为指向Base的指针，去掉const属性</li>
+</ul>
+<h2 id="std-is-polymorphic"><a href="#std-is-polymorphic" class="headerlink" title="std::is_polymorphic"></a>std::is_polymorphic</h2><ul>
+<li>用于判定类型是否是多态</li>
+<li>在头文件<code>&lt;type_traits&gt;</code></li>
+<li>类中至少有一个虚函数，则这个类被认为是多态的；多态允许通过基类指针或引用调用生类的虚函数</li>
+</ul>
+<h2 id="true-type-和-false-type"><a href="#true-type-和-false-type" class="headerlink" title="true_type 和 false_type"></a>true_type 和 false_type</h2><p>已知<code>true_type</code>定义如下</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">_Tp</span>, _Tp __v&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">_LIBCPP_TEMPLATE_VIS</span> integral_constant</span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">static</span> _LIBCPP_CONSTEXPR <span class="type">const</span> _Tp      value = __v;</span><br><span class="line">  <span class="keyword">typedef</span> _Tp               value_type;</span><br><span class="line">  <span class="keyword">typedef</span> integral_constant type;</span><br><span class="line">  <span class="function">_LIBCPP_INLINE_VISIBILITY</span></span><br><span class="line"><span class="function">  _LIBCPP_CONSTEXPR <span class="keyword">operator</span> <span class="title">value_type</span><span class="params">()</span> <span class="type">const</span> _NOEXCEPT </span>&#123;<span class="keyword">return</span> value;&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> _LIBCPP_STD_VER &gt; 11</span></span><br><span class="line">  <span class="function">_LIBCPP_INLINE_VISIBILITY</span></span><br><span class="line"><span class="function">  <span class="keyword">constexpr</span> value_type <span class="title">operator</span> <span class="params">()</span><span class="params">()</span> <span class="type">const</span> _NOEXCEPT </span>&#123;<span class="keyword">return</span> value;&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> integral_constant&lt;<span class="type">bool</span>, <span class="literal">true</span>&gt;  true_type;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">_Tp</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">_LIBCPP_TEMPLATE_VIS</span> is_polymorphic</span><br><span class="line">    : <span class="keyword">public</span> integral_constant&lt;<span class="type">bool</span>, __is_polymorphic(_Tp)&gt; &#123;&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>理解代码<code>bind()</code>函数调用逻辑：</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">Base</span>, <span class="keyword">class</span> <span class="title class_">Derived</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">RegisterPolymorphicCaster</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">static</span> PolymorphicCaster <span class="type">const</span> * <span class="title">bind</span><span class="params">( std::true_type <span class="comment">/* is_polymorphic&lt;Base&gt; */</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;StaticObject&lt;PolymorphicVirtualCaster&lt;Base, Derived&gt;&gt;::<span class="built_in">getInstance</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">static</span> PolymorphicCaster <span class="type">const</span> * <span class="title">bind</span><span class="params">( std::false_type <span class="comment">/* is_polymorphic&lt;Base&gt; */</span> )</span></span></span><br><span class="line"><span class="function">    </span>&#123; <span class="keyword">return</span> <span class="literal">nullptr</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//! Performs registration (binding) between Base and Derived</span></span><br><span class="line">    <span class="comment">/*! If the type is not polymorphic, nothing will happen */</span></span><br><span class="line">    <span class="function"><span class="type">static</span> PolymorphicCaster <span class="type">const</span> * <span class="title">bind</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123; <span class="keyword">return</span> <span class="built_in">bind</span>( <span class="keyword">typename</span> std::is_polymorphic&lt;Base&gt;::<span class="built_in">type</span>() ); &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>第一步：替换<code>Base</code>得到实例化模版类</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">_LIBCPP_TEMPLATE_VIS</span> is_polymorphic</span><br><span class="line">    : <span class="keyword">public</span> integral_constant&lt;<span class="type">bool</span>, __is_polymorphic(Base)&gt; &#123;&#125;;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>第二步：由于<code>Base</code>是多态类，得到实例化模版类</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">_LIBCPP_TEMPLATE_VIS</span> is_polymorphic</span><br><span class="line">    : <span class="keyword">public</span> integral_constant&lt;<span class="type">bool</span>, <span class="literal">true</span>&gt; &#123;&#125;;</span><br><span class="line">```  </span><br><span class="line">+ 第三步：得到实例化特化模版基类`integral_constant&lt;<span class="type">bool</span>, <span class="literal">true</span>&gt;`</span><br><span class="line">```c++</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">_Tp</span> = <span class="type">bool</span>, _Tp __v = <span class="literal">true</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> _LIBCPP_TEMPLATE_VIS integral_constant</span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">static</span> _LIBCPP_CONSTEXPR <span class="type">const</span> _Tp      value = __v;</span><br><span class="line">  <span class="keyword">typedef</span> _Tp               value_type;</span><br><span class="line">  <span class="keyword">typedef</span> integral_constant type;</span><br><span class="line">  <span class="function">_LIBCPP_INLINE_VISIBILITY</span></span><br><span class="line"><span class="function">  _LIBCPP_CONSTEXPR <span class="keyword">operator</span> <span class="title">value_type</span><span class="params">()</span> <span class="type">const</span> _NOEXCEPT </span>&#123;<span class="keyword">return</span> value;&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> _LIBCPP_STD_VER &gt; 11</span></span><br><span class="line">  <span class="function">_LIBCPP_INLINE_VISIBILITY</span></span><br><span class="line"><span class="function">  <span class="keyword">constexpr</span> value_type <span class="title">operator</span> <span class="params">()</span><span class="params">()</span> <span class="type">const</span> _NOEXCEPT </span>&#123;<span class="keyword">return</span> value;&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>第四步：<code>typename std::is_polymorphic&lt;Base&gt;::type()</code>分两步解析</p>
+<ul>
+<li><code>typename std::is_polymorphic&lt;Base&gt;::type</code>代表<code>integral_constant&lt;bool, true&gt;</code></li>
+<li><code>()</code>代表创建匿名对象</li>
+</ul>
+</li>
+<li><p>第五步：分析<code>true_type</code>和<code>false_type</code>，<code>true_type</code>是类<code>integral_constant&lt;bool, true&gt;</code>，而<code>false_type</code>是类<code>integral_constant&lt;bool, false&gt;</code>，是两种类型！！！！</p>
+</li>
+<li><p>第六步：<code>integral_constant&lt;bool, true&gt;</code>对应<code>true_type</code>，因此找到了对应的重载函数！！！</p>
+</li>
+<li><p>额外：分析<code>integral_constant</code>中的<code>operator value_type()</code>函数，这是一个类型转换运算符，这里衍生出理解类型转换运算符的作用, 如下是一个示例，因此<code>operator value_type()</code>的作用为，把<code>integral_constant</code>对象转为 <code>value_type</code>类型</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyInt</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyInt</span>() : <span class="built_in">value_</span>(<span class="number">10</span>) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> value_; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> value_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyInt a;</span><br><span class="line"><span class="type">int</span> b &#123;a&#125;;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="#运算符"></a><code>#</code>运算符</h2><p><code>#</code>只对宏参数有效，用于生成与变量同名的字符串</p>
+<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> A(x) #x</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a1 = <span class="number">2</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">A</span>(a1) &lt;&lt; endl; <span class="comment">// 输出为: a1</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="std-is-array"><a href="#std-is-array" class="headerlink" title="std::is_array"></a><code>std::is_array</code></h2><div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Test</span><span class="params">(T&amp;&amp; t)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; std::is_array&lt;<span class="keyword">typename</span> std::remove_reference&lt;T&gt;::type&gt;::value &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>* a = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> b[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span> c[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">Test</span>(a);</span><br><span class="line"><span class="built_in">Test</span>(b);</span><br><span class="line"><span class="built_in">Test</span>(c);</span><br></pre></td></tr></table></figure></div>
+
+<p>输出：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">1</span><br></pre></td></tr></table></figure></div>
         </div>
 
         
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 抽象工厂模式</li>
+        <li><strong>标题:</strong> c++细节综合</li>
         <li><strong>作者:</strong> 星辰</li>
         <li><strong>创建于
-                :</strong> 2024-09-28 08:22:22</li>
+                :</strong> 2024-10-04 10:32:07</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-09-28 08:46:46
+                    :</strong> 2024-10-04 14:00:22
             </li>
         
         <li>
-            <strong>链接:</strong> http://crystalzjj.github.io/2024/09/28/抽象工厂模式/
+            <strong>链接:</strong> http://crystalzjj.github.io/2024/10/04/c-细节综合/
         </li>
         <li>
             <strong>
@@ -432,29 +467,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/10/02/cereal%E5%BA%8F%E5%88%97%E5%8C%96%E5%AD%A6%E4%B9%A0/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">cereal序列化学习</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/09/28/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"
+                        href="/2024/10/03/move%E5%92%8Cforward/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">工厂方法模式</span>
+                                <span class="post-nav-title-item">move和forward</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -518,8 +538,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">目录</div>
-        <div class="page-title">抽象工厂模式</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#uml%E7%B1%BB%E5%9B%BE"><span class="nav-text">uml类图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a></li></ol>
+        <div class="page-title">c++细节综合</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#std-is-base-of"><span class="nav-text">std::is_base_of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-cast"><span class="nav-text">const_cast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#std-is-polymorphic"><span class="nav-text">std::is_polymorphic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#true-type-%E5%92%8C-false-type"><span class="nav-text">true_type 和 false_type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">#运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#std-is-array"><span class="nav-text">std::is_array</span></a></li></ol>
 
     </div>
 </div>
